@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include<vector>
 
 using std::string;
 
@@ -25,4 +26,5 @@ private:
     string player_name;
     int player_score;
     string player_game_time;
+    //vector<Player*> v_player;
 };

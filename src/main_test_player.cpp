@@ -9,6 +9,9 @@ int main(){
 
 
 GameManager gm1;
+//GameManager gm2;
+//GameManager gm3;
+//gm3.temp_print_vector_of_object_pointers(v_player);
 //Player p2("markus", 10, "Mon Oct 28 21:43:13 2019");
 // Player p1;
 // p1.SetPlayerName();
