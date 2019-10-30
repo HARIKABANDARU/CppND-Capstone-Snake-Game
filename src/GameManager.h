@@ -8,11 +8,13 @@ public:
     GameManager(){
         std::cout <<"Init GAME MANAGER" << std::endl;
         player = InitManager();
+       ManageNewPlayer();
+       DumpDataToFile(player);
     };
 
     void ManageNewPlayer();
     Player *InitManager();
-    void DumpDataToFile();
+    void DumpDataToFile(Player *player);
     void RetriveDataFromFile();
     
 
