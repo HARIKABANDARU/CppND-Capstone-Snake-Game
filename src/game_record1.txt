@@ -1,54 +1,6 @@
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-ok
-markus
-bart
-micheal
-buchholz
-stian
-lefeng
+name ::arnold  score :: 444
+name ::bart  score :: 99
+name ::buchholz  score :: 999
+name ::john  score :: 88
+name ::markus  score :: 100
+name ::micheal  score :: 87

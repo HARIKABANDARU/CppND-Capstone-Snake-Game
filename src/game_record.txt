@@ -1,6 +1,6 @@
-markus
-bart
-micheal
-buchholz
-stian
-lefeng
+markus 100
+bart 99
+micheal 87
+buchholz 999
+john 88 
+arnold 444

@@ -41,12 +41,12 @@ void GameManager::temp_print_vector_of_object_pointers (vector<Player*> v_player
 
         int v_player_size =v_player.size();
 
-   // for (int i = 0; i< v_player_size; i++ ){
+    for (int i = 0; i< v_player_size; i++ ){
     std::cout<<"----------------------------------------------------------------"<<std::endl;
-    std::cout<<"player vector::  " << v_player[0]->GetPlayerName() << std::endl;
-    std::cout<<"player vector::  " << v_player[1]->GetPlayerName() << std::endl;
-    std::cout<<"player vector::  " << v_player[2]->GetPlayerName() << std::endl;
-    
+   // std::cout<<"player vector::  " << v_player[0]->GetPlayerName() << std::endl;
+   // std::cout<<"player vector::  " << v_player[1]->GetPlayerName() << std::endl;
+    std::cout<<"player vector::  " << v_player[i]->GetPlayerName() << std::endl;
+    }
     
      //" :: " << p->GetPlayerScore() << " :: " <<p->GetPlayerGameTime() << std::endl;
 

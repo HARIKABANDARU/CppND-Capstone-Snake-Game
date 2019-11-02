@@ -13,6 +13,22 @@
 using std::string;
 using std::vector;
 
+
+class DataManager {
+
+public:
+
+vector<string> ReadGameHistory();
+std::map<string, int> SortGameHistory();
+void WriteGameHistory(vector<string> v_new_player_name);
+void DisplayData();
+
+private:
+
+
+}
+
+
 const std::string gamaDataDirectory{"/data/"};
 
 vector<string> ReadGameHistory()
