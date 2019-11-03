@@ -53,14 +53,56 @@ std::map<string, int>  ReadGameHistoryMap()
 
 //-------------------------------------------------------------------------------------------//
 
+void WriteGameHistoryMapSorted(std::map<string, int> aux_map)
+{
+
+
+  std::ofstream dataFile;
+
+  dataFile.open("game_record1.txt", std::ios::in | std::ios::out | std::ios::app);
+  if (!dataFile.is_open())
+  {
+    std::cout << " not possible to open file" << std::endl;
+  }
+  else
+  {
+    std::map<string, int> sorted_aux_map;
+
+    typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
+
+
+    Comparator compFunctor =
+      [](std::pair<std::string, int> elem1 ,std::pair<std::string, int> elem2)
+  {
+  return elem1.second > elem2.second;
+  };
+
+
+    // Declaring a set that will store the pairs using above comparision logic
+    std::set<std::pair<std::string, int>, Comparator> sorted_map(
+        aux_map.begin(), aux_map.end(), compFunctor);
+
+    // Iterate over a set using range base for loop
+    // It will display the items in sorted order of values
+    int ii = 1;
+    for (std::pair<std::string, int> element : sorted_map)
+        {dataFile << ii <<". player : " << element.first << ", score : " << element.second <<"\n" ;
+        ii++;
+        }
+
+    dataFile.close();
+  }
+
+}
+
+//-------------------------------------------------------------------------------------------//
+
 void WriteGameHistoryMap(std::map<string, int> players_map)
 {
 
   std::map<string, int>::iterator it;
 
-  std::cout << "CALLED FUNCTION ::  2 " << __FUNCTION__ << std::endl;
-  int size = players_map.size();
-  std::cout << "SIZE ::" << players_map.size() << std::endl;
+
   std::ofstream dataFile;
 
   dataFile.open("game_record1.txt", std::ios::in | std::ios::out | std::ios::app);
@@ -84,10 +126,11 @@ void WriteGameHistoryMap(std::map<string, int> players_map)
 }
 
 
+
 //-------------------------------------------------------------------------------------------//
 
 
-std::map<string, int> SortPlayersByScors(std::map<string, int> aux_map)
+void DisplaySortedPlayers(std::map<string, int> aux_map)
 {
 
     std::map<string, int> sorted_aux_map;
@@ -111,18 +154,16 @@ std::map<string, int> SortPlayersByScors(std::map<string, int> aux_map)
 
 
     // Declaring a set that will store the pairs using above comparision logic
-    std::set<std::pair<std::string, int>, Comparator> set_map(
+    std::set<std::pair<std::string, int>, Comparator> sorted_map(
         aux_map.begin(), aux_map.end(), compFunctor);
 
     // Iterate over a set using range base for loop
     // It will display the items in sorted order of values
-    for (std::pair<std::string, int> element : set_map)
-        {std::cout << element.first << " :: " << element.second << std::endl;
-
-        sorted_aux_map.insert(std::make_pair(element.first, element.second));
+    int ii = 1;
+    for (std::pair<std::string, int> element : sorted_map)
+        {std::cout << ii <<". player : " << element.first << ", score : " << element.second << std::endl;
+        ii++;
         }
-
-    return sorted_aux_map;
 }
 
 //-------------------------------------------------------------------------------------------//
@@ -131,24 +172,20 @@ int main()
 {
 
   std::map<string, int> test_map;
-  std::map<string,int> sorted_map;
   std::map<string, int>::iterator it;
 
   test_map = ReadGameHistoryMap();
-  sorted_map = SortPlayersByScors(test_map);
+  DisplaySortedPlayers(test_map);
 
-  int size_map = sorted_map.size();
+  
 
 std::cout<<"-----------------------------------------------------"<<std::endl;
 
-for (it = sorted_map.begin(); it != sorted_map.end(); it++)
-{
-    std::cout << "name ::" << (*it).first << "  score :: " << (*it).second << std::endl;
-}
 
-  WriteGameHistoryMap(sorted_map);
+  WriteGameHistoryMapSorted(test_map);
+  WriteGameHistoryMap(test_map);
 
-  std::cout << "BACK" << std::endl;
+ 
 
   return 0;
 }

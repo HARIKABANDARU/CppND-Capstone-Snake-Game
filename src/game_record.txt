@@ -4,3 +4,6 @@ micheal 87
 buchholz 999
 john 88 
 arnold 444
+le 800
+stian 90
+frode 8

@@ -23,9 +23,16 @@ std::map<string, int> sort_user_scores(std::map<string, int> aux_map)
     typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
 
     // Defining a lambda function to compare two pairs. It will compare two pairs using second field
-    Comparator compFunctor =
-        [](std::pair<std::string, int> elem1, std::pair<std::string, int> elem2) {
-            return elem1.second < elem2.second;
+    // ASCENDING
+    // Comparator compFunctor =
+    //     [](std::pair<std::string, int> elem1, std::pair<std::string, int> elem2) {
+    //         return elem1.second < elem2.second;
+    //     };
+        //DESCENDING
+        Comparator compFunctor =
+        [](std::pair<std::string, int> elem1 ,std::pair<std::string, int> elem2)
+        {
+        return elem1.second > elem2.second;
         };
 
     // Declaring a set that will store the pairs using above comparision logic
