@@ -3,6 +3,7 @@
 #include "game.h"
 #include "renderer.h"
 #include "menu_main.cpp"
+#include "GameManager.h"
 
 int main() {
   constexpr std::size_t kFramesPerSecond{60};
@@ -12,12 +13,29 @@ int main() {
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
+  bool start_game;
+  start_game = false;
+
+  // do{
+  // GameManager gm;
+  // start_game = gm.InitManager();
+  // } while (start_game==true);
+
+  while(start_game ==false){
+ GameManager gm;
+  start_game = gm.InitManager();
+
+  }
+
+
+ std::cout<<"begin the game"<<std::endl;
+  
+
+  //get_user_data();
+
+
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  
-  get_user_data();
-
-
   Controller controller;
   Game game(kGridWidth, kGridHeight);
   game.Run(controller, renderer, kMsPerFrame);

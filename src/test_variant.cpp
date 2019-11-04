@@ -24,7 +24,13 @@ int main()
     std::cout << "The HEX of color RED is:[" << u["RED"] << "]\n";
     std::cout << "The HEX of color BLACK is:[" << u["BLACK"] << "]\n";
 
-    std::cout << "test  ::: " << u.at["1"]<< std::endl;
+    //std::cout << "test  ::: " << u.at["1"]<< std::endl;
  
+    int ii = 1;
+    while(ii<10){
+
+        std::cout<< "ii :: "<<ii<<std::endl;
+        ii++;
+    }
     return 0;
 }

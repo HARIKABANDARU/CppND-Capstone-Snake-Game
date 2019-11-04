@@ -57,7 +57,7 @@ std::map<string, int>::iterator it;
 void get_user_data()
 {
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 2; i++)
     {
         std::cout << "Enter your name ::" << std::endl;
         std::cin >> user_name;

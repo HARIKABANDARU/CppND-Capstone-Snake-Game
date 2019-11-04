@@ -49,6 +49,7 @@ std::map<string, int>  DataManager::ReadGameHistoryMap()
       //return v_player_name;
     }
     filestream.close();
+    std::cout<<"finishing reading file ..."<<std::endl;
     return players_map;
   }
 }
@@ -136,6 +137,7 @@ void DataManager::WriteGameHistoryMap(std::map<string, int> players_map)
 void DataManager::DisplaySortedPlayers(std::map<string, int> aux_map)
 {
 
+std::cout<<"called :: "<< __FUNCTION__<< "   size  ::"<< aux_map.size() << std::endl;
     std::map<string, int> sorted_aux_map;
 
     typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
@@ -163,10 +165,14 @@ void DataManager::DisplaySortedPlayers(std::map<string, int> aux_map)
     // Iterate over a set using range base for loop
     // It will display the items in sorted order of values
     int ii = 1;
+   // while(ii<11){
+      
     for (std::pair<std::string, int> element : sorted_map)
         {std::cout << ii <<". player : " << element.first << ", score : " << element.second << std::endl;
         ii++;
+        if (ii>10)break;
         }
+    //}
 }
 
 //-------------------------------------------------------------------------------------------//
