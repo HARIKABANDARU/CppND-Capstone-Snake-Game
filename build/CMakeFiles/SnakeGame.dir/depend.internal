@@ -115,6 +115,7 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o
  /usr/local/include/SDL2/begin_code.h
  /usr/local/include/SDL2/close_code.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o
+ /home/markus/CppND-Capstone-Snake-Game/src/DataManager.h
  /home/markus/CppND-Capstone-Snake-Game/src/GameManager.h
  /home/markus/CppND-Capstone-Snake-Game/src/Player.h
  /home/markus/CppND-Capstone-Snake-Game/src/controller.h

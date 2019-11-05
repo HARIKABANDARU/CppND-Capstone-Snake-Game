@@ -16,7 +16,7 @@
 //Player *GameManager::InitManager(){
 bool GameManager::InitManager(){
 
-int key_pressed;
+//int key_pressed = 0;
 
 std::cout<<" ### WELCOME TO SNAKE GAME ###" <<std::endl;
 std::cout<<"   " <<std::endl;
@@ -24,15 +24,41 @@ std::cout<<" 1. Start New Game" <<std::endl;
 std::cout<<" 2. Top 10 scores" <<std::endl;
 std::cout<<" 3. QUIT" <<std::endl;
 std::cout<<"your choice --> ";
-std::cin>>key_pressed;
+//std::cin>>key_pressed;
+// if (key_pressed != 1 || key_pressed !=2 || key_pressed !=3){
+//     std::cout<<"wrong key ... . Try one more time! " <<std::endl;
+//     std::cin.clear();
+//     //key_pressed = 0;
+//     //return false;
+// }
+
+int key_pressed;
+
+while(!(std::cin >> key_pressed)) {
+
+     std::cin.clear();
+
+     while (std::cin.get() != '\n')
+          continue;
+
+     // Ask user to try again:
+     std::cout << "FAILED. Only number is allowed. Please enter correct number -->  ";
+}
+if ((key_pressed < 1) || (key_pressed >3))
+{
+std::cout<<"you pressed : "<< key_pressed<<std::endl;
+std::cout << "FAILED. Please enter correct number!" << "\n\n";
+return false;
+}
+
 
 switch (key_pressed){
 
     case 1:
     {
 
-    Player *newplayer = new Player();
-    ManageNewPlayer(newplayer);
+    //Player *newplayer = new Player();
+    //ManageNewPlayer(newplayer);
     return true;
 
     };
@@ -53,6 +79,9 @@ switch (key_pressed){
 std::cout<<"quiting the game ... Thanks"<<std::endl;
     exit(0);
     };
+    // default:
+    // std::cout<<"wrong key ... . Try one more time! " <<std::endl;
+    // return false;
    
 
 }

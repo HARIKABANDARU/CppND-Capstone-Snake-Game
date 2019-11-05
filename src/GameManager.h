@@ -12,7 +12,7 @@ public:
    
     GameManager(){
         
-        std::cout <<"Init GAME MANAGER" << std::endl;
+        std::cout <<" " << std::endl;
         
         
        //InitManager();

@@ -26,11 +26,17 @@ int main()
 
     //std::cout << "test  ::: " << u.at["1"]<< std::endl;
  
-    int ii = 1;
-    while(ii<10){
+    // int ii = 1;
+    // while(ii<10){
 
-        std::cout<< "ii :: "<<ii<<std::endl;
-        ii++;
-    }
+    //     std::cout<< "ii :: "<<ii<<std::endl;
+    //     ii++;
+    // }
+
+    std::string name;
+    std::cout<<"name  ::";
+    std::cin>>name;
+    std::cout<<name<<std::endl;
+
     return 0;
 }

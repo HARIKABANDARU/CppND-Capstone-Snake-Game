@@ -23,7 +23,7 @@ DataManager::~DataManager(){};
 std::map<string, int>  DataManager::ReadGameHistoryMap()
 {
 
-  std::cout << "CALLED FUNCTION 1 ::  " << __FUNCTION__ << std::endl;
+ // std::cout << "CALLED FUNCTION 1 ::  " << __FUNCTION__ << std::endl;
 
   string line;
   string player_name; 
@@ -63,7 +63,7 @@ void DataManager::WriteGameHistoryMapSorted(std::map<string, int> aux_map)
 
   std::ofstream dataFile;
 
-  dataFile.open("game_record1.txt", std::ios::in | std::ios::out | std::ios::app);
+  dataFile.open("game_record.txt", std::ios::in | std::ios::out | std::ios::app);
   if (!dataFile.is_open())
   {
     std::cout << " not possible to open file" << std::endl;
@@ -109,7 +109,7 @@ void DataManager::WriteGameHistoryMap(std::map<string, int> players_map)
 
   std::ofstream dataFile;
 
-  dataFile.open("game_record1.txt", std::ios::in | std::ios::out | std::ios::app);
+  dataFile.open("game_record.txt", std::ios::in | std::ios::out | std::ios::app);
   if (!dataFile.is_open())
   {
     std::cout << " not possible to open file" << std::endl;
@@ -120,7 +120,8 @@ void DataManager::WriteGameHistoryMap(std::map<string, int> players_map)
 
           for (it = players_map.begin(); it != players_map.end(); it++)
         {
-            dataFile << "name ::" << (*it).first << "  score :: " << (*it).second << "\n";
+            //dataFile << "name ::" << (*it).first << "  score :: " << (*it).second << "\n";
+            dataFile << (*it).first << " " << (*it).second << "\n";
         }
 
 
