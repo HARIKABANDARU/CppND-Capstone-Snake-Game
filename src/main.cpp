@@ -15,6 +15,8 @@
 #include <functional>
 #include <set>
 #include "DataManager.h"
+#include "snake.h"
+
 //#include "Player.h"
 
 int main() {
@@ -38,13 +40,15 @@ int main() {
 while (true){
 
   while(start_game ==false){
- GameManager gm;
+  GameManager gm;
+  
   start_game = gm.InitManager();
 
   }
   start_game = false;
 Player *newplayer = new Player();
 DataManager *newdm = new DataManager();
+Snake newsnake; // = new Snake();
 newplayer->SetPlayerName();
 
 
@@ -70,6 +74,7 @@ newplayer->SetPlayerName();
   std::cout << "Score: " << game.GetScore() << "\n";
   player_score = game.GetScore();
   std::cout << "Size: " << player_score << "\n";
+  std::cout << "Snake head travel ::" << newsnake.GetHeadDistanceTravel() << std::endl;
   
   //std::cout<<"NAME :::::::::::::::::::" << newplayer->GetPlayerName();
   actual_player_map.insert(std::make_pair(actual_player_name, player_score));

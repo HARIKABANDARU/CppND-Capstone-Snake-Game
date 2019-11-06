@@ -2,8 +2,10 @@
 #include <iostream>
 #include <string>
 #include<ctime>
+#include<vector>
 
 using std::string;
+using std::vector;
 
 
 Player::Player(string player_name, int player_score, string player_game_time){
@@ -54,6 +56,11 @@ void Player::SetPlayerScore(){
     std::cin >> player_score;
     this->player_score = player_score;
 
+}
+
+float Player::GetHeadDistance(){
+
+    
 }
 
 

@@ -2,11 +2,15 @@
 #include <cmath>
 #include <iostream>
 
+Snake::Snake(){};
 void Snake::Update() {
   SDL_Point prev_cell{
       static_cast<int>(head_x),
       static_cast<int>(
           head_y)};  // We first capture the head's cell before updating.
+ 
+
+
   UpdateHead();
   SDL_Point current_cell{
       static_cast<int>(head_x),
@@ -17,6 +21,8 @@ void Snake::Update() {
   if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) {
     UpdateBody(current_cell, prev_cell);
   }
+
+  //std::cout<<" diff x :: "<< abs(current_cell_float.x - prev_cell_float.x) << " diff y :: "<< abs(current_cell_float.y - prev_cell_float.y) <<std::endl;
 }
 
 void Snake::UpdateHead() {
@@ -41,11 +47,35 @@ void Snake::UpdateHead() {
   // Wrap the Snake around to the beginning if going off of the screen.
   head_x = fmod(head_x + grid_width, grid_width);
   head_y = fmod(head_y + grid_height, grid_height);
+
+  //std::cout<<"TRAVEL :: x : "<< head_x  << "  :: y :: "<< head_y<< std::endl;
+
+  HeadDistanceTravel(head_total_distance, head_x, head_y, x_prev, y_prev);
+
+  std::cout << "head distance  :::" << head_total_distance << std::endl;
 }
+//-------------------------------------------------------------------------------
+void Snake::HeadDistanceTravel (float &h_tot_dist, float h_x, float head_y, float &x_prev, float &y_prev){
+
+  h_tot_dist = h_tot_dist + abs(head_x - x_prev) + abs(head_y - y_prev);
+  x_prev = head_x;
+  y_prev = head_y;
+}
+
+
+
+//-------------------------------------------------------------------------------
+float Snake::GetHeadDistanceTravel(){
+
+return this->head_total_distance;
+}
+
+//-------------------------------------------------------------------------------
 
 void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {
   // Add previous head location to vector
   body.push_back(prev_head_cell);
+  
 
   if (!growing) {
     // Remove the tail from the vector.
