@@ -32,6 +32,7 @@ int main() {
   start_game = false;
   std::map<string, int> actual_player_map;
   std::string actual_player_name;
+  Snake tempSnake;
 
   // do{
   // GameManager gm;
@@ -50,6 +51,7 @@ Player *newplayer = new Player();
 DataManager *newdm = new DataManager();
 Snake newsnake; // = new Snake();
 newplayer->SetPlayerName();
+tempSnake.head_total_distance = 0;
 
 
  std::cout<<"begin the game"<<std::endl;
@@ -74,7 +76,7 @@ newplayer->SetPlayerName();
   std::cout << "Score: " << game.GetScore() << "\n";
   player_score = game.GetScore();
   std::cout << "Size: " << player_score << "\n";
-  std::cout << "Snake head travel ::" << newsnake.GetHeadDistanceTravel() << std::endl;
+  std::cout << "Snake head travel ::" << tempSnake.head_total_distance << std::endl;
   
   //std::cout<<"NAME :::::::::::::::::::" << newplayer->GetPlayerName();
   actual_player_map.insert(std::make_pair(actual_player_name, player_score));

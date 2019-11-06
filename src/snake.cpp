@@ -25,6 +25,9 @@ void Snake::Update() {
   //std::cout<<" diff x :: "<< abs(current_cell_float.x - prev_cell_float.x) << " diff y :: "<< abs(current_cell_float.y - prev_cell_float.y) <<std::endl;
 }
 
+float Snake::head_total_distance = 0;
+
+
 void Snake::UpdateHead() {
   switch (direction) {
     case Direction::kUp:
@@ -65,10 +68,10 @@ void Snake::HeadDistanceTravel (float &h_tot_dist, float h_x, float head_y, floa
 
 
 //-------------------------------------------------------------------------------
-float Snake::GetHeadDistanceTravel(){
+// float Snake::GetHeadDistanceTravel(){
 
-return this->head_total_distance;
-}
+// return head_total_distance;
+// }
 
 //-------------------------------------------------------------------------------
 

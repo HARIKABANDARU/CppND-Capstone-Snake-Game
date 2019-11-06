@@ -16,8 +16,7 @@ class Snake {
         head_x(grid_width / 2),
         head_y(grid_height / 2),
         x_prev(grid_width / 2),
-        y_prev(grid_height / 2),
-        head_total_distance (0) {};
+        y_prev(grid_height / 2){};
 
   void Update();
 
@@ -35,7 +34,7 @@ class Snake {
   float head_y;
   float x_prev;
   float y_prev;
-  float head_total_distance;
+  static float head_total_distance;
   
   std::vector<SDL_Point> body;
 
