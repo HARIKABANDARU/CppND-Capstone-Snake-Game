@@ -1,12 +1,15 @@
 # CPPND: Capstone Snake Game Example
 
-This repo includes the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This repo includes the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code was developed in order to satisfy all criteria for the “README” and “Compiling and Testing” sections in [Rubric](https://review.udacity.com/#!/rubrics/2533/view), and at least 5 total criteria from the rest of the specification. The Capston project solution was deployed on the project [skeleton](https://github.com/udacity/CppND-Capstone-Snake-Game) provided by Udacity.
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+## The Capstone project (Snake-Game) meets following project requirements:
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+### A. Introduction:
+
+### B. Criterias:
+
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
