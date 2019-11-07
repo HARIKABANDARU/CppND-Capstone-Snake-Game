@@ -12,6 +12,7 @@
 #include <functional>
 #include <set>
 
+bool GameManager::quit_game_flag = false;
 
 //Player *GameManager::InitManager(){
 bool GameManager::InitManager(){
@@ -77,11 +78,14 @@ switch (key_pressed){
     case 3:
     {
 std::cout<<"quiting the game ... Thanks"<<std::endl;
-    exit(0);
+quit_game_flag = true;
+
+    //exit(0);
     };
+  
     // default:
     // std::cout<<"wrong key ... . Try one more time! " <<std::endl;
-    // return false;
+     return false;
    
 
 }

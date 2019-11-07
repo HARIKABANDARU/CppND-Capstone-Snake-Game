@@ -30,6 +30,32 @@ functional
 set
 -
 
+/home/markus/CppND-Capstone-Snake-Game/src/GameManager.cpp
+GameManager.h
+/home/markus/CppND-Capstone-Snake-Game/src/GameManager.h
+DataManager.h
+/home/markus/CppND-Capstone-Snake-Game/src/DataManager.h
+iostream
+-
+vector
+-
+fstream
+-
+dirent.h
+-
+unistd.h
+-
+sstream
+-
+algorithm
+-
+bits/stdc++.h
+-
+functional
+-
+set
+-
+
 /home/markus/CppND-Capstone-Snake-Game/src/GameManager.h
 iostream
 -
@@ -125,6 +151,10 @@ SDL.h
 /home/markus/CppND-Capstone-Snake-Game/src/SDL.h
 snake.h
 /home/markus/CppND-Capstone-Snake-Game/src/snake.h
+thread
+-
+mutex
+-
 
 /home/markus/CppND-Capstone-Snake-Game/src/snake.h
 vector

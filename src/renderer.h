@@ -4,6 +4,10 @@
 #include <vector>
 #include "SDL.h"
 #include "snake.h"
+#include <thread>
+#include <mutex>
+
+
 
 class Renderer {
  public:
@@ -13,6 +17,7 @@ class Renderer {
 
   void Render(Snake const snake, SDL_Point const &food);
   void UpdateWindowTitle(int score, int fps);
+  //void StartThreads(int a, int b);
 
  private:
   SDL_Window *sdl_window;

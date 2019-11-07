@@ -55,7 +55,7 @@ void Snake::UpdateHead() {
 
   HeadDistanceTravel(head_total_distance, head_x, head_y, x_prev, y_prev);
 
-  std::cout << "head distance  :::" << head_total_distance << std::endl;
+  //std::cout << "head distance  :::" << head_total_distance << std::endl;
 }
 //-------------------------------------------------------------------------------
 void Snake::HeadDistanceTravel (float &h_tot_dist, float h_x, float head_y, float &x_prev, float &y_prev){

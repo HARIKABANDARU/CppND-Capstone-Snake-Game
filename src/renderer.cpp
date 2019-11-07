@@ -2,8 +2,11 @@
 #include <iostream>
 #include <string>
 #include "/usr/include/SDL2/SDL_ttf.h"
+#include <thread>
+#include <mutex>
 
 
+std::mutex m1;
 
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
@@ -85,7 +88,24 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 
 }
 
+// void Renderer::UpdateWindowTitle(int score, int fps) {
+//   std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+//   SDL_SetWindowTitle(sdl_window, title.c_str());
+// }
+
+
 void Renderer::UpdateWindowTitle(int score, int fps) {
+  std::lock_guard<std::mutex> lock(m1);
   std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
+
+
+// void Renderer::StartThreads(int a, int b){
+//     std::thread t1(UpdateWindowTitle, 29, 29);
+//      std::thread t2(UpdateWindowTitle, 78, 78);
+//      t1.join();
+//      t2.join();
+
+
+//}

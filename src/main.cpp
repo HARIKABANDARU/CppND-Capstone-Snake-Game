@@ -19,6 +19,9 @@
 
 //#include "Player.h"
 
+
+
+
 int main() {
   constexpr std::size_t kFramesPerSecond{60};
   constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};
@@ -33,6 +36,9 @@ int main() {
   std::map<string, int> actual_player_map;
   std::string actual_player_name;
   Snake tempSnake;
+  bool quit_game_flag = false;
+
+
 
   // do{
   // GameManager gm;
@@ -40,8 +46,14 @@ int main() {
   // } while (start_game==true);
 while (true){
 
+
   while(start_game ==false){
   GameManager gm;
+
+
+    if (gm.quit_game_flag== true){
+    return 0;
+  }
   
   start_game = gm.InitManager();
 

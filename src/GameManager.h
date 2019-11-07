@@ -27,6 +27,7 @@ public:
     void DumpDataToFile(Player *player);
     void RetriveDataFromFile();
     void temp_print_vector_of_object_pointers (vector<Player*> v);
+    static bool quit_game_flag;
     
 
 private:

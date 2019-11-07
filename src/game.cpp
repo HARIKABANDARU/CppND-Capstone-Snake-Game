@@ -1,6 +1,8 @@
 #include "game.h"
 #include <iostream>
 #include "SDL.h"
+#include <mutex>
+#include<thread>
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
@@ -33,12 +35,22 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // takes.
     frame_count++;
     frame_duration = frame_end - frame_start;
+    //std::cout<< " x ::" <<x_new_pos << "  y  :: "<< y_new_pos <<std::endl;
+   //int a = 29;
+   //int b =78;
+    // std::thread t1(renderer.UpdateWindowTitle, a, a);
+    // std::thread t2(renderer.UpdateWindowTitle, b, b);
+    // t1.join();
+    // t2.join();
+
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
       renderer.UpdateWindowTitle(score, frame_count);
+      //renderer.UpdateWindowTitle(a, a);
       frame_count = 0;
       title_timestamp = frame_end;
+      
     }
 
     // If the time for this frame is too small (i.e. frame_duration is
@@ -65,6 +77,9 @@ void Game::PlaceFood() {
   }
 }
 
+int Game::x_new_pos = 0;
+int Game::y_new_pos = 0;
+
 void Game::Update() {
   if (!snake.alive) return;
 
@@ -72,6 +87,9 @@ void Game::Update() {
 
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);
+  x_new_pos = new_x;
+  y_new_pos = new_y;
+  //std::cout<< " x ::" <<new_x << "  y  :: "<< new_y <<std::endl;
 
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
