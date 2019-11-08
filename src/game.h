@@ -7,8 +7,9 @@
 #include "renderer.h"
 #include "snake.h"
 
-class Game {
- public:
+class Game
+{
+public:
   Game(std::size_t grid_width, std::size_t grid_height);
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
@@ -17,7 +18,7 @@ class Game {
   static int x_new_pos;
   static int y_new_pos;
 
- private:
+private:
   Snake snake;
   SDL_Point food;
 

@@ -4,11 +4,17 @@
 #include <vector>
 #include "SDL.h"
 
-class Snake {
- public:
-
- Snake();
-  enum class Direction { kUp, kDown, kLeft, kRight };
+class Snake
+{
+public:
+  Snake();
+  enum class Direction
+  {
+    kUp,
+    kDown,
+    kLeft,
+    kRight
+  };
 
   Snake(int grid_width, int grid_height)
       : grid_width(grid_width),
@@ -22,7 +28,7 @@ class Snake {
 
   void GrowBody();
   bool SnakeCell(int x, int y);
-  void HeadDistanceTravel (float &h_tot_dist, float h_x, float head_y, float &x_prev, float &y_prev);
+  void HeadDistanceTravel(float &h_tot_dist, float h_x, float head_y, float &x_prev, float &y_prev);
   float GetHeadDistanceTravel();
 
   Direction direction = Direction::kUp;
@@ -35,15 +41,15 @@ class Snake {
   float x_prev;
   float y_prev;
   static float head_total_distance;
-  
+
   std::vector<SDL_Point> body;
 
- private:
+private:
   void UpdateHead();
   void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell);
 
   bool growing{false};
-  
+
   int grid_width;
   int grid_height;
 };
