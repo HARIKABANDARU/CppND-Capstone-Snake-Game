@@ -19,7 +19,7 @@ On the main menu the player can press keys 1,2 and 3. Other configuration is not
 
 1. Loops, Functions --> The project code is OOP with the security mechanism in order to avoid fail states
 2. I/O --> Application read and write the file (or creates new one if the specified not exist.). DataManager.h class
-3. The project accepts user input and processes the input ### User Main Manu is the interactive interface with the game. GameManger.h class
+3. The project accepts user input and processes the input --> User Main Manu is the interactive interface with the game. GameManger.h class
 4. The project uses Object Oriented Programming techniques. --> The Capstopn project supports OOP technique and uses its dedicated principles.
 5. Classes use appropriate access specifiers for class members. --> The classes uses dedicted class members to access class memebers. Class objects communicates with memebes by setters and getters.
 6. The project makes use of references in function declarations- --> Project definies the function where references in declaraton are used: HeadDistanceTravel() in snake.h.
