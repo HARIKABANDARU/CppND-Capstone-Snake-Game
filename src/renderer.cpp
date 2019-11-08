@@ -1,7 +1,7 @@
 #include "renderer.h"
 #include <iostream>
 #include <string>
-#include "/usr/include/SDL2/SDL_ttf.h"
+//#include "/usr/include/SDL2/SDL_ttf.h"
 #include <thread>
 #include <mutex>
 
